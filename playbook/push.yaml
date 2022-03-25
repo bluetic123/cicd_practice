@@ -10,4 +10,4 @@
     #- name: docker login
     #  #  command: docker login -u bluetic321 -p <PW>
   - name: push image
-      command: docker push bluetic321/my-hello-world
+    command: docker push bluetic321/my-hello-world
