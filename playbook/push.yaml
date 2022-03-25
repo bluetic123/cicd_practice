@@ -1,0 +1,13 @@
+---
+- name: build image and push to docker hub play
+  hosts: ansible_host
+  tasks:
+  - name: remove image
+    command: docker rmi bluetic321/my-hello-world
+    ignore_errors: true
+  - name: build image
+    command: docker build -t bluetic321/my-hello-world ~/hello-world
+    #- name: docker login
+    #  #  command: docker login -u bluetic321 -p <PW>
+    - name: push image
+      command: docker push bluetic321/my-hello-world
